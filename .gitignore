@@ -1,0 +1,7 @@
+/build
+*.swp
+*.swo
+*.log
+*.exe
+*.tmp
+node_modules
