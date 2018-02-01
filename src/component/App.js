@@ -1,10 +1,12 @@
 import React, { PureComponent } from 'react'
+import {HotKeys} from 'react-hotkeys'
+import Textarea from '../utils/components/Textarea.js'
 
 export default class App extends PureComponent {
   render() {
-    return <div>
-      todo
-    </div>
+    return <HotKeys>
+      <Textarea />
+    </HotKeys>
   }
 }
 

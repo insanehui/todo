@@ -55,6 +55,10 @@ async function main() {
     'cssobj.js',
     'browser.js',
     'redux_middleware.js',
+    'components/Textarea.js',
+    'components/utils.js',
+    'components/displayName.js',
+    'web/webpack_node_env.js',
   ])
 
   console.log(chalk.cyan('premake done'))
