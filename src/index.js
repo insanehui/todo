@@ -7,7 +7,6 @@ import './utils/css_preset.js'
 import {css} from './utils/cssobj.js'
 
 import App from './component/App.js'
-import Catch from './component/Catch.js'
 
 import store from './store.js'
 // import registerServiceWorker from './registerServiceWorker';
@@ -30,10 +29,7 @@ css({
   },
 })
 
-render(
-  <Catch>
-    <Provider store={store}><App /></Provider>
-  </Catch>
+render( <Provider store={store}><App /></Provider>
   , document.getElementById('root'))
 
 // registerServiceWorker()

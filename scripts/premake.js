@@ -51,20 +51,10 @@ async function main() {
   const _src_ = 'C:/Users/guanghui/js_utils'
 
   await copy(_src_, '../src/utils', [
-    'components/BImg.js',
-    'components/Handling.js',
-    'components/Formy.js',
-    'components/CheckboxSelect.js',
-    'components/Sortable.js',
-  ])
-
-  await copy(_src_, '../../svr/builder/utils', [
-    'node/tempCd.js',
-    'node/cmd_line.js',
-  ])
-
-  await copy(d('../src/'), '../../svr/builder/', [ // 用于isomophism
-    'iso.js',
+    'css_preset.js',
+    'cssobj.js',
+    'browser.js',
+    'redux_middleware.js',
   ])
 
   console.log(chalk.cyan('premake done'))
