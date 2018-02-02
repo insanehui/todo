@@ -58,6 +58,7 @@ async function main() {
     'components/Textarea.js',
     'components/utils.js',
     'components/displayName.js',
+    'components/Sortable.js',
     'web/webpack_node_env.js',
   ])
 
