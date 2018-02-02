@@ -4,7 +4,7 @@ import {encode, decode} from 'arson'
 import {HotKeys} from 'react-hotkeys'
 import injectSheet from 'react-jss'
 import Textarea from '../utils/components/Textarea.js'
-import Sortable from '../utils/components/Sortable.js'
+import Sortable, {Handle} from '../utils/components/Sortable.js'
 
 @injectSheet({
   cheader : {
@@ -98,10 +98,11 @@ export default class App extends PureComponent {
         </HotKeys>
         <button className={cbutton} onClick={save}>保存</button>
       </div>
-      <Sortable value={todos} onChange={v=>this.setState({ todos:v })}>
-        {item=>{
+      <Sortable value={todos} onChange={v=>this.setState({ todos:v })} useDragHandle>
+        {({ value, remove })=>{
           return <div>
-            {item.value} <i className='iconfont icon-fail' />
+            <Handle>{value}</Handle> 
+            <i className='iconfont icon-fail' onClick={remove}/>
           </div>
         }}
       </Sortable>
