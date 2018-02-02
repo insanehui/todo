@@ -113,6 +113,11 @@ class Textarea extends PureComponent {
     return _.get(this, ['textarea', 'value'])
   }
 
+  get isControlled(){
+    const {onChange} = this.props
+    return !!onChange
+  }
+
   focus = ()=>{ // focus方法
     let {textarea} = this
     textarea && textarea.focus()
@@ -121,6 +126,13 @@ class Textarea extends PureComponent {
   blur = ()=>{ // blur方法
     let {textarea} = this
     textarea && textarea.blur()
+  }
+
+  clear = ()=>{ // clear方法
+    if ( this.isControlled ) { // 如果是controlled，它没有权力自己清空自己的值
+      return
+    } 
+    this.textarea && (this.textarea.value = '')
   }
 
   render() {

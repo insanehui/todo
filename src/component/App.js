@@ -37,7 +37,9 @@ export default class App extends PureComponent {
     const input = {
       handlers : {
         'enter': e => {
-          add(this.text.value)
+          const {text} = this
+          add(text.value)
+          text.clear()
           e.preventDefault()
           e.stopPropagation()
         }
