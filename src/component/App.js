@@ -41,13 +41,7 @@ import Sortable from '../utils/components/Sortable.js'
 })
 export default class App extends PureComponent {
 
-  state = {
-    todos : [
-      'aaaaa',
-      'bbbbb',
-      'ccccc',
-    ],
-  }
+  state = {}
 
   add = v=>{
     const {todos} = this.state 
@@ -107,7 +101,7 @@ export default class App extends PureComponent {
       <Sortable value={todos} onChange={v=>this.setState({ todos:v })}>
         {item=>{
           return <div>
-            {item.value}
+            {item.value} <i className='iconfont icon-fail' />
           </div>
         }}
       </Sortable>

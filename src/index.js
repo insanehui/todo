@@ -7,6 +7,7 @@ import './utils/css_preset.js'
 import {css} from './utils/cssobj.js'
 
 import App from './component/App.js'
+import './icon/iconfont.css'
 
 import store from './store.js'
 // import registerServiceWorker from './registerServiceWorker';
