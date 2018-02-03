@@ -10,6 +10,9 @@ import Sortable, {Handle} from '../utils/components/Sortable.js'
   cheader : {
     display : 'flex',
   },
+  citem : {
+    display : 'flex',
+  },
   cbutton : {
     margin : '0 12px',
     padding: '3px 10px',
@@ -64,7 +67,7 @@ export default class App extends PureComponent {
   render() {
     const {todos} = this.state 
     const {add, save} = this
-    const {classes:{cheader, cbutton}} = this.props
+    const {classes:{cheader, cbutton, citem}} = this.props
 
     const main = {
       handlers : {
@@ -100,9 +103,9 @@ export default class App extends PureComponent {
       </div>
       <Sortable value={todos} onChange={v=>this.setState({ todos:v })} useDragHandle>
         {({ value, remove })=>{
-          return <div>
+          return <div className={citem}>
             <Handle>{value}</Handle> 
-            <i className='iconfont icon-fail' onClick={remove}/>
+            <button onClick={remove}><i className='iconfont icon-fail' /></button>
           </div>
         }}
       </Sortable>
