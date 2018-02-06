@@ -59,6 +59,7 @@ async function main() {
     'components/utils.js',
     'components/displayName.js',
     'components/Sortable.js',
+    'components/localStoragify.js',
     'web/webpack_node_env.js',
   ])
 

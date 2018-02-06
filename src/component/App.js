@@ -5,6 +5,9 @@ import {HotKeys} from 'react-hotkeys'
 import injectSheet from 'react-jss'
 import Textarea from '../utils/components/Textarea.js'
 import Sortable, {Handle} from '../utils/components/Sortable.js'
+import {localStorageArson} from '../utils/components/localStoragify.js'
+
+const Sort = localStorageArson('todos')(Sortable)
 
 @injectSheet({
   cheader : {
@@ -51,19 +54,6 @@ export default class App extends PureComponent {
     this.setState({ todos:[v, ...todos] })
   }
 
-  save = ()=>{
-    const {todos} = this.state 
-    localStorage.todos = encode(todos)
-  }
-
-  componentDidMount(){
-    this.setState({ todos: decode(localStorage.todos) || [] })
-  }
-
-  componentDidUpdate(){
-    this.save()
-  }
-
   render() {
     const {todos} = this.state 
     const {add, save} = this
@@ -101,14 +91,14 @@ export default class App extends PureComponent {
         </HotKeys>
         <button className={cbutton} onClick={save}>保存</button>
       </div>
-      <Sortable value={todos} onChange={v=>this.setState({ todos:v })} useDragHandle>
+      <Sort value={todos} onChange={v=>this.setState({ todos:v })} useDragHandle>
         {({ value, remove })=>{
           return <div className={citem}>
             <Handle>{value}</Handle> 
             <button onClick={remove}><i className='iconfont icon-fail' /></button>
           </div>
         }}
-      </Sortable>
+      </Sort>
     </HotKeys>
   }
 }
