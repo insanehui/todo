@@ -4,7 +4,7 @@
  */
 
 import React, { PureComponent } from 'react'
-import {decode, encode} from 'arson'
+import arson from 'arson'
 
 import {displayName} from './displayName.js'
 
@@ -50,4 +50,4 @@ export const localStoragify = (encode = ident, decode = ident)=> key=> Control =
   return Storagified
 }
 
-export const localStorageArson = localStoragify(encode, decode)
+export const localStorageArson = localStoragify(arson.encode, arson.decode)
