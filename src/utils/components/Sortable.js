@@ -32,7 +32,7 @@ export default class Sortable extends PureComponent {
     this.Main = SortableContainer(as)
     for (const child of children()) {
       if ( _.isFunction(child) ) {
-        this.Sub = SortableElement(child) // 只能有一个child是funtion
+        this.Sub = SortableElement(child) // 只能有一个child是function
         break;
       } 
     }

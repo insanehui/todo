@@ -6,7 +6,7 @@
 import React, { PureComponent } from 'react'
 import arson from 'arson'
 
-import {displayName} from './displayName.js'
+import displayName from '../displayName/get.js'
 
 const ident = x=>x
 

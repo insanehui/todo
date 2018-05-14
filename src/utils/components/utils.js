@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react'
 import {either} from 'ramda'
 
 import {isDev} from '../web/webpack_node_env.js'
-import {displayName} from './displayName.js'
+import displayName from './displayName/get.js'
 
 export function merge_props(p0, p1){ // 两个props合并，主要是针对style再合并一层
 

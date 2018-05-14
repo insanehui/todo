@@ -57,9 +57,9 @@ async function main() {
     'redux_middleware.js',
     'components/Textarea.js',
     'components/utils.js',
-    'components/displayName.js',
+    'components/displayName/get.js',
     'components/Sortable.js',
-    'components/localStoragify.js',
+    'components/localStoragify/index.js',
     'web/webpack_node_env.js',
   ])
 

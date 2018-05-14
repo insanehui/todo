@@ -3,7 +3,7 @@
  */
 import _ from 'lodash'
 
-export const displayName = cmp => {
+export default cmp => {
   if ( _.isString(cmp) ) { // 字符串直接返回
     return cmp
   } 

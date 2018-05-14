@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react'
-import {encode, decode} from 'arson'
 
 import {HotKeys} from 'react-hotkeys'
 import injectSheet from 'react-jss'
 import Textarea from '../utils/components/Textarea.js'
 import Sortable, {Handle} from '../utils/components/Sortable.js'
-import {localStorageArson} from '../utils/components/localStoragify.js'
+import {localStorageArson} from '../utils/components/localStoragify/index.js'
 
 const Sort = localStorageArson('todos')(Sortable)
 
